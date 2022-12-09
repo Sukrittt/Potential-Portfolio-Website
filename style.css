@@ -1,0 +1,189 @@
+@import url('https://fonts.googleapis.com/css2?family=Anek+Devanagari&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap');
+*{
+    box-sizing: border-box;
+}
+body{
+    background-color: var(--bg-color);
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow-x: hidden;
+}
+:root{
+    --bg-color: rgb(6,11,25);
+    --border-color: rgb(255,255,255,0.1);
+    --text-gray: #49495a;
+    --nav-font:'Anek Devanagari', sans-serif;
+    --main-font: 'Rubik', sans-serif;
+    --title-font:'Rubik Mono One', sans-serif;
+    --icon-color: rgb(191, 188, 188);
+    --button-hover: #090e1d;
+}
+
+
+/*NavBar*/
+.navbar{
+    display: flex;
+    width: 100%;
+    border-bottom: 1px solid var(--border-color);
+    font-family: var(--nav-font);
+}
+.navbar > .section{
+    padding: 3rem 2rem;
+    display:flex;
+    border-left: 1px solid var(--border-color);
+    justify-content: center;
+    align-items: center;
+}
+.home-icon,
+.about-work{
+    flex-basis: calc(100%/3);
+}
+.social-icon,
+.get-in-touch{
+    flex-grow: 1;
+}
+.get-in-touch{
+    color:var(--text-gray);
+    font-weight: 600;
+}
+a{
+    text-decoration: none;
+    color: gray;
+    transition: color 350ms;
+}
+a:hover{
+    color: white;
+}
+.home-icon{
+    justify-content: flex-start !important;
+    font-size: 2rem;
+}
+.home-icon a{
+    color: white;
+}
+.about-work{
+    gap: 6rem;
+    font-weight: 600;
+}
+.social-icon{
+    gap: 3rem;
+}
+
+/*Main Content*/
+main{
+    flex-grow: 1;
+    position: relative;
+    font-family: 'Rubik', sans-serif;;
+}
+main > article{
+    display: grid;
+    height: 100%;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1.5fr 1fr;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+}
+.description-section,
+.nav-section{
+    border-left: 1px solid var(--border-color);
+}
+.image-section,
+.title-section,
+.nav-section{
+    border-top: 1px solid var(--border-color);
+}
+
+.image-section{
+    background-image: url(https://i.postimg.cc/9Q1d5dX6/image-1.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.image-section-two{
+    background-image: url(https://i.postimg.cc/3JCd2BzP/image-2.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.image-section-three{
+    background-image: url(https://i.postimg.cc/26qj1FfL/image-3.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.description-section p{
+    color: var(--text-gray);
+    font-size: 1.35em;
+    width: 20em;
+    margin: auto;
+    margin-top: 10em;
+    line-height: 1.15em;
+}
+.title-section{
+    display: flex;
+    align-items: center;
+    padding: 0 4em;
+}
+.title-section span{
+    color: white;
+    font-size: 4em;
+    font-family: var(--title-font);
+    word-spacing: -.5em;
+    width: 7em;
+    display: inline-block;
+}
+.plus-icon{
+    color: var(--icon-color);
+    font-size: 8em;
+    display: flex;
+    justify-content: flex-end;
+    flex-grow: 1;
+}
+.nav-section{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    color: var(--icon-color);
+    font-size: 6em;
+}
+.button{
+    display: flex;
+    box-sizing: border-box;
+    justify-content: center;
+    border-left: 1px solid var(--border-color);
+
+}
+.nav-button{
+    background-color: var(--bg-color);
+    border: none;
+    color: white;
+    font-size: 1.25em;
+    padding: 0 .7em;
+    cursor: pointer;
+    transition: background-color 300ms;
+}
+.nav-button:hover{
+    background-color: var(--button-hover);
+}
+.right-arrow{
+    border-left: 1px solid var(--border-color);
+}
+.article-two{
+    transform: translateX(100%);
+}
+.article-three{
+    transform: translateX(-100%);
+}
+main > article[data-status ="active"]{
+    transition: 250ms;
+    transition-delay: 50ms;
+}
+main > article[data-status ="inactive"]{
+    transition: 250ms;
+    transition-delay: 50ms;
+}
